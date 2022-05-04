@@ -338,3 +338,13 @@ test('inspect on aggregate project root pom', async (t) => {
     'should return expected result',
   );
 });
+
+test('inspect on complex aggregate pom with --all-projects', async (t) => {
+  await plugin.inspect(
+    path.join(fixturesPath, 'complex-aggregate-project'),
+    'pom.xml',
+    {
+      allProjects: true,
+    },
+  );
+});
